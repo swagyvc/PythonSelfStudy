@@ -8,6 +8,16 @@ import os
 #if yes, they can review their inventory, they can either choose to edit inventory (add/remove/change price)
 #after edit they can hit save and review inventory.
 
+#Get ready for apply OOP for this project, add login feature (sign in/up for this application)
+
+
+#---note---
+#I want to build a application like a clone amazon, where people can login and add item
+# and other people can buy product from others
+
+#Tech stack
+#Django
+
 user_input = input("Do you have an account? (y/n): ")
 
 FILE_NAME = "Owner_list.json"
