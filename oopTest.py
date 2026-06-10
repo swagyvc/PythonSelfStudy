@@ -59,3 +59,4 @@ phone = SmartPhone()
 phone.use_phone(15)
 print(phone.get_battery_level()) # Output: Battery Level: 85%
 print("======EXERCISE 3 END======")
+
