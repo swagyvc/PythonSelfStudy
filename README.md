@@ -5,5 +5,3 @@ Selfstudy Python including OOP & DSA & Building Personal Project with Python fro
 *--Note--*
 <br>
 Used AI for selfstudy, generating exercises and practical examinations.
-
-
