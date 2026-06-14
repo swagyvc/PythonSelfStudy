@@ -20,3 +20,4 @@ class Wallet:
             raise ValueError("Insufficient funds.")
 
         self.__balance -= amount
+
