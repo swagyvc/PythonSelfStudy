@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; background: #f4f4f9; }
+        .home-container { max-width: 500px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .role-badge { display: inline-block; background: #e7f1ff; color: #0056b3; padding: 4px 12px; border-radius: 12px; font-size: 14px; }
+        .actions { margin-top: 24px; }
+        .actions a { color: #007bff; text-decoration: none; margin-right: 16px; }
+        .actions a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="home-container">
+    <h2>Welcome, {{ user.username }}</h2>
+    <p>Signed in as <strong>{{ user.email }}</strong></p>
+    <p>Account type: <span class="role-badge">{{ role_label }}</span></p>
+
+    <div class="actions">
+        <a href="{% url 'logout' %}">Log out</a>
+    </div>
+</div>
+
+</body>
+</html>
