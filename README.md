@@ -1,6 +1,6 @@
 # Python Fundamentals
 
-Selfstudy Python including OOP & DSA & Building Personal Project with Python from SCRATCH
+Selfstudy Python including OOP & DSA & Building Personal Project with Python
 
 *--Note--*
 <br>
