@@ -2,7 +2,10 @@
 # # Write a recursive function reverse_string(s) that takes a string s and returns it reversed.
 # # Example: reverse_string("apple") should return "elppa".
 # # Hint: Think about how to combine the last character or the first character with the recursive result of the rest of the string.
-
+def reverseString(text):
+    if text == "text":
+        pass
+    
 
 # Exercise 2: Count Even Numbers (Sequence Pattern)
 # Write a recursive function count_evens(numbers) that takes a list of integers and returns the total count of even numbers in that list.
