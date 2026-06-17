@@ -2,18 +2,30 @@ Here are some practice exercises that include recursive functions, following the
 
 ### Exercise 9: Simple Reduction Recursion
 
-```python
-def fun(n):
-    if n <= 1:
-        return 1
-    s = 0
-    for i in range(n):
-        s = s + i
-    return fun(n - 1)
-
+```md
+    ```py
+    def fun(n): #T(n)???
+        if n <= 1: #1
+            return 1#0
+            s = 0 #1
+        for i in range(n): #n + 1
+            s = s + i #n * 2
+            return fun(n - 1) #n * 1 * T(n - 1)
+    ```
+T(n) = 3 + 5n + n * T(n - 1)
+T(n - 1) = 3 + 5n + n * T(n - 2)
+T(n - 2) = 3n + 5n + n * T(n - 3)
+...
+T(n) = 3 + 5n + n * T(n - 1)
+     = 3 + 5n + 3 + 5n + n * T(n - 2)
+     = 3 + 5n + 3 + 5n + 3 + 5n + n * T(n - 3)
+     = 3 + 5n + 3 + 5n + .....  + n * T(0)
+     = 3 + 5n + 3 + 5n + .....  + n * 2
+     = (3 + 5n)(n - 1) + .....  + n * 2
+     = 3n - 3 + 5n^2 - 5 + 2n
+     = 5n^2 - 3
+T(n) = O(n^2)
 ```
-
-* **Find:** $T(n)$ and Big O
 
 ---
 
@@ -30,7 +42,6 @@ def fun(n):
 
 ```
 
-* **Find:** $T(n)$ and Big O
 
 ---
 
@@ -50,20 +61,3 @@ def fun(n):
 * **Find:** $T(n)$ and Big O
 
 ---
-
-### Solutions
-
-#### Exercise 9
-
-* **$T(n)$ Calculation:** The work done at each level is $O(n)$ due to the loop. The function reduces $n$ by 1 each time, leading to $n$ recursive calls. Total work is $n + (n-1) + (n-2) + \dots + 1 = \frac{n(n+1)}{2}$.
-* **Big O:** $O(n^2)$
-
-#### Exercise 10
-
-* **$T(n)$ Calculation:** Each level of the recursion tree splits into 2 branches but halves the input size. The work done at the root is $O(n)$. At the next level, it is $2 \times O(\frac{n}{2}) = O(n)$. The total work at each level of the tree remains $O(n)$, and there are $\log n$ levels.
-* **Big O:** $O(n \log n)$
-
-#### Exercise 11
-
-* **$T(n)$ Calculation:** The internal loop takes $O(\log n)$ time. The function reduces $n$ by 1 each time, running $n$ times. Total work is $\sum_{i=1}^{n} \log i = \log(n!) \approx n \log n$.
-* **Big O:** $O(n \log n)$
