@@ -3,8 +3,9 @@
 # # Example: reverse_string("apple") should return "elppa".
 # # Hint: Think about how to combine the last character or the first character with the recursive result of the rest of the string.
 def reverseString(text):
-    if text == "text":
-        pass
+    if len(text) == 0: #base case
+        return 0
+    #continue
     
 
 # Exercise 2: Count Even Numbers (Sequence Pattern)
