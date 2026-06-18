@@ -2,17 +2,41 @@
 # # Write a recursive function reverse_string(s) that takes a string s and returns it reversed.
 # # Example: reverse_string("apple") should return "elppa".
 # # Hint: Think about how to combine the last character or the first character with the recursive result of the rest of the string.
-def reverseString(text):
-    if len(text) == 0: #base case
-        return 0
-    #continue
-    
+
+# def reverseString(text):
+#     if len(text) == 0: #base case
+#         return ""
+#     return reverseString(text[1:]) + text[0]
+
+# user = input("Enter words: ")
+# print(reverseString(user))
+
+# reverseString("cat")
+# │
+# ├─ reverseString("at") + "c"
+# │
+# └── reverseString("at")
+#     │
+#     ├─ reverseString("t") + "a"
+#     │
+#     └── reverseString("t")
+#         │
+#         ├─ reverseString("") + "t"
+#         │
+#         └── reverseString("")
+#             │
+#             └─ returns ""
+
 
 # Exercise 2: Count Even Numbers (Sequence Pattern)
 # Write a recursive function count_evens(numbers) that takes a list of integers and returns the total count of even numbers in that list.
 # Example: count_evens([2, 5, 8, 10, 11]) should return 3.
 # Hint: Look at numbers[0]. If it's even, add 1 to the recursive result of numbers[1:]. If it's odd, add 0.
-
+def evenCheck(num):
+    if num <= 0:
+        return 0
+    count = 0
+    return evenCheck(num )
 
 # Exercise 3: Recursive Power Function (Number Pattern)
 # Write a recursive function power(base, exp) that calculates $\text{base}^{\text{exp}}$ without using the  operator or any loops. 
