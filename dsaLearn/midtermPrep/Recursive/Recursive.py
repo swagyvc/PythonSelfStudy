@@ -32,11 +32,24 @@
 # Write a recursive function count_evens(numbers) that takes a list of integers and returns the total count of even numbers in that list.
 # Example: count_evens([2, 5, 8, 10, 11]) should return 3.
 # Hint: Look at numbers[0]. If it's even, add 1 to the recursive result of numbers[1:]. If it's odd, add 0.
-def evenCheck(num):
-    if num <= 0:
-        return 0
-    count = 0
-    return evenCheck(num )
+
+# number = [2, 5, 8, 10, 11]
+
+# def evenCheck(num):
+#     # 1. Base Case: An empty list has 0 even numbers
+#     if len(num) == 0:
+#         return 0
+
+#     # 2. Work & Recursive Step
+#     if num[0] % 2 == 0:
+#         # If it's even count it as 1 and check the rest
+#         return 1 + evenCheck(num[1:])
+#     else:
+#         # if it's odd count it as 0 and check the rest
+#         return 0 + evenCheck(num[1:])
+
+# print(evenCheck(number))
+    
 
 # Exercise 3: Recursive Power Function (Number Pattern)
 # Write a recursive function power(base, exp) that calculates $\text{base}^{\text{exp}}$ without using the  operator or any loops. 
@@ -48,3 +61,26 @@ def evenCheck(num):
 # Write a recursive function clean_string(s) that takes a string and returns a new string where adjacent duplicate characters are reduced to a single character.
 # Example: clean_string("yyyees") should return "yes".
 # Hint: Your base case changes here. You need to check if the string has a length of 0 or 1. If it's longer, compare s[0] with s[1].
+
+    
+
+# def check(text):
+#     # 1. Base Case: 0 or 1 letters left means it's a palindrome
+#     if len(text) <= 1:
+#         return True
+        
+#     # 2. Work: Check if the outer letters match
+#     if text[0] == text[-1]:
+#         # 3. Leap of Faith: Check the inner remaining slice
+#         return check(text[1:-1])
+        
+#     # If outer letters don't match, it's not a palindrome
+#     return False
+
+# # Test it
+# print(check(["p","e","e","p"])) # Returns True
+# print(check(["a","p","p","l","e"])) # Returns False
+
+
+
+    
