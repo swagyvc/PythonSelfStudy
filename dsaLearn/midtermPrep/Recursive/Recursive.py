@@ -49,7 +49,6 @@
 #         return 0 + evenCheck(num[1:])
 
 # print(evenCheck(number))
-    
 
 # Exercise 3: Recursive Power Function (Number Pattern)
 # Write a recursive function power(base, exp) that calculates $\text{base}^{\text{exp}}$ without using the  operator or any loops. 
@@ -81,6 +80,37 @@
 # print(check(["p","e","e","p"])) # Returns True
 # print(check(["a","p","p","l","e"])) # Returns False
 
+#Sum
+# number = 4
+# def sum_to_end(n):
+#     if n == 1:
+#         return 1
+#     return n + sum_to_end(n - 1)
+
+# print(sum_to_end(number))
+
+#=====Factorial=====
+#Recursion
+# number = 5
+# def factorial(n):
+#     if n == 0:
+#         return 1
+#     return n * factorial(n - 1)
+
+# print(factorial(number))
+
+#Iterative
+# number = 5
+# def factorial(n):
+#     if n <= 0:
+#         return 1
+#     result = 1
+#     for i in range(1, n + 1):
+#         result *= i
+#     return result
+
+# print(factorial(number))
+#=====================
 
 
-    
+
