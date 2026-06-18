@@ -112,5 +112,15 @@
 # print(factorial(number))
 #=====================
 
+# number = [1,2,3,4]
+# #Recursion
+# def double_num(n):
+#     if len(n) == 0:
+#         return []
+    
+#     return [n[0] * 2] + double_num(n[1:])
+
+# print(double_num(number))
+
 
 
