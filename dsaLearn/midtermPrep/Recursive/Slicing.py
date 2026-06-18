@@ -7,18 +7,22 @@ nums = [10, 20, 30, 40, 50, 60, 70]
 
 # Exercise 1
 # Get: [20, 30, 40]
+#[start:end:step]
+print(f"Ex1: {nums[1:4]}")
 
 # Exercise 2
 # Get: [50, 60, 70]
+print(f"Ex2: {nums[-3:7]}")
 
 # Exercise 3
 # Get every second element:
 # Expected: [10, 30, 50, 70]
+print(f"Ex3: {nums[:7:2]}")
 
 # Exercise 4
 # Reverse the list using slicing only.
 # Expected: [70, 60, 50, 40, 30, 20, 10]
-
+print(f"Ex4: {nums[::-1]}")
 
 # ==========================================
 # Level 2: String Slicing
@@ -26,21 +30,24 @@ nums = [10, 20, 30, 40, 50, 60, 70]
 
 # Given:
 word = "DataStructures"
-
+   #    123456789
 # Exercise 5
 # Get: "Data"
+print(f"Ex5: {word[:4]}")
 
 # Exercise 6
 # Get: "Structures"
+print(f"Ex6: {word[4:]}")
 
 # Exercise 7
 # Get every second character.
-# Expected: "DtSrctrs"
+# Expected: "DtSrcue"
+print(f"Ex7: {word[::2]}")
 
 # Exercise 8
 # Reverse the string.
 # Expected: "serutcurtSataD"
-
+print(f"Ex8: {word[::-1]}")
 
 # ==========================================
 # Level 3: DSA Style Slicing
@@ -52,14 +59,17 @@ arr = [1, 2, 3, 4, 5, 6, 7, 8]
 # Exercise 9
 # Get the first half.
 # Expected: [1, 2, 3, 4]
+print(f"Ex9: {arr[:4]}")
 
 # Exercise 10
 # Get the second half.
 # Expected: [5, 6, 7, 8]
+print(f"Ex10: {arr[-4:]}")
 
 # Exercise 11
 # Rotate the array left by 2 positions.
 # Expected: [3, 4, 5, 6, 7, 8, 1, 2]
+print(f"Ex11: {arr[-4:]}")
 
 # Exercise 12
 # Rotate the array right by 3 positions.
