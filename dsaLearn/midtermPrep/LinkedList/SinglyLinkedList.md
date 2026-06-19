@@ -1,3 +1,4 @@
+```python
 # ANALOGY: The Blueprints for a Clue Box
 # Each clue box holds an item (data) and a slip of paper pointing to the next location (next).
 class Node:
@@ -84,3 +85,4 @@ llist.delete_by_value("Harry")
 
 print("\n--- After Deleting Harry ---")
 llist.print_list() # Outputs: Dick, Tom
+```
