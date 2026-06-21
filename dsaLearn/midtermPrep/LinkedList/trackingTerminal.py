@@ -1,53 +1,83 @@
 class Node:
-    def __init__(self, timestamp):
-        self.timestamp = timestamp
-        self.next: Node | None = None
+    def __init__(self, data=None):
+        self.data = data
+        self.prev = None
+        self.next = None
 
-class RequestTracker:
-    def __init__(self, max_size=5):
-        self.head: Node | None = None
-        self.tail: Node | None = None
-        self.current_size = 0
-        self.max_size = max_size
 
-    def log_request(self, timestamp):
-        new_node = Node(timestamp)
+class SentinelDoublyLinkedList:
+    def __init__(self):
+        # Create the dummy boundary nodes
+        self.header = Node()
+        self.trailer = Node()
+        
+        # Link them to each other initially
+        self.header.next = self.trailer
+        self.trailer.prev = self.header
+        self.size = 0
 
-        # If list is empty
-        if not self.head:
-            self.head = new_node
-            self.tail = new_node
-            self.current_size += 1
-            return
+    def insert_between(self, data, predecessor, successor):
+        """Adds data between two existing nodes."""
+        new_node = Node(data)
+        new_node.prev = predecessor
+        new_node.next = successor
+        
+        predecessor.next = new_node
+        successor.prev = new_node
+        
+        self.size += 1
+        return new_node
 
-        # Append to the tail (O(1))
-        self.tail.next = new_node
-        self.tail = new_node
-        self.current_size += 1
+    def remove_node(self, node):
+        """Removes a node from the list by unlinking it."""
+        predecessor = node.prev
+        successor = node.next
+        
+        predecessor.next = successor
+        successor.prev = predecessor
+        
+        self.size -= 1
+        return node.data
 
-        # If we exceed the max size, evict the oldest from the head (O(1))
-        if self.current_size > self.max_size:
-            self.head = self.head.next
-            self.current_size -= 1
+    def add_to_front(self, data):
+        """Inserts right after the header sentinel."""
+        return self.insert_between(data, self.header, self.header.next)
 
-    def display_log(self):
-        current = self.head
-        log_items = []
-        while current:
-            log_items.append(str(current.timestamp))
+    def add_to_back(self, data):
+        """Inserts right before the trailer sentinel."""
+        return self.insert_between(data, self.trailer.prev, self.trailer)
+
+    def remove_from_front(self):
+        """Removes the first real data item."""
+        if self.size == 0:
+            print("List is empty.")
+            return None
+        return self.remove_node(self.header.next)
+
+    def display(self):
+        """Traverses from the first real node to the last."""
+        current = self.header.next
+        items = []
+        while current != self.trailer:
+            items.append(str(current.data))
             current = current.next
-        print("Oldest -> " + " -> ".join(log_items) + " -> Newest")
+        print("[Header] <-> " + " <-> ".join(items) + " <-> [Trailer]")
+
 
 # --- Test Execution ---
 if __name__ == "__main__":
-    tracker = RequestTracker(max_size=3) # Track only the last 3 requests
-    
-    print("User makes 3 requests:")
-    tracker.log_request("10:00:01")
-    tracker.log_request("10:00:02")
-    tracker.log_request("10:00:03")
-    tracker.display_log()
+    cache_log = SentinelDoublyLinkedList()
 
-    print("\nUser makes a 4th request (Oldest should drop instantly):")
-    tracker.log_request("10:00:04")
-    tracker.display_log()
+    print("Adding items to back:")
+    cache_log.add_to_back("Page_A")
+    cache_log.add_to_back("Page_B")
+    cache_log.add_to_back("Page_C")
+    cache_log.display()
+
+    print("\nAdding item to front:")
+    cache_log.add_to_front("New_Page_Zero")
+    cache_log.display()
+
+    print("\nRemoving from front:")
+    cache_log.remove_from_front()
+    cache_log.display()
