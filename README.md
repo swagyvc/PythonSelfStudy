@@ -1,6 +1,6 @@
 # Python Fundamentals
 
-Selfstudy Python including OOP & DSA & Building Personal Project with Python
+Selfstudy Python including OOP & DSA & Building Mini Project with Python
 
 *--Note--*
 <br>
