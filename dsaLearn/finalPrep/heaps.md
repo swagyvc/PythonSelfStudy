@@ -99,6 +99,8 @@ Invalid for a heap shape because there is a gap before a later child:
         E
 ```
 
+
+
 ### Tree vocabulary (quiz-ready)
 
 
@@ -134,11 +136,15 @@ right(i)  = 2 * i + 2
 
 Example with `[90, 70, 80, 50, 60, 75]`:
 
+
 | Index | Value | Parent index | Left child | Right child |
-|---|---:|---:|---:|---:|
-| 0 | 90 | none | 1 -> 70 | 2 -> 80 |
-| 1 | 70 | 0 -> 90 | 3 -> 50 | 4 -> 60 |
-| 2 | 80 | 0 -> 90 | 5 -> 75 | none |
+| ----- | ----- | ------------ | ---------- | ----------- |
+| 0     | 90    | none         | 1 -> 70    | 2 -> 80     |
+| 1     | 70    | 0 -> 90      | 3 -> 50    | 4 -> 60     |
+| 2     | 80    | 0 -> 90      | 5 -> 75    | none        |
+
+
+
 
 ### Max-heap operation checklist (invariant)
 
@@ -256,6 +262,8 @@ Height of a heap with n nodes is \lfloor\log_2 n\rfloor, so each sift is O(\log 
 - `sift_down` is like taking an elevator downward while one of your children has higher priority than you.
 - You only move along one path, not through every node, which is why these operations are logarithmic.
 
+
+
 ## 2.2 Implement sift-up + insert (25 min)
 
 **Coding prompt — write from scratch:**
@@ -358,8 +366,6 @@ Answer:
 
 **Analogy:** Heapify is local repair. Imagine a manager is placed above two teams that are already organized correctly. You only need to check whether that manager belongs above those team leaders. If not, swap them with the stronger leader and continue downward.
 
-
-
 ## 2.5 Day 2 exit check
 
 - [ ] Insert and delete-max work on paper *and* in code
@@ -449,6 +455,8 @@ swap max to end:
              [1, 2, 4, 5]   sorted zone: [2, 4, 5]
 done:        [1, 2, 4, 5]
 ```
+
+
 
 ## 3.3 Complexity cheat sheet (memorize) (10 min)
 
