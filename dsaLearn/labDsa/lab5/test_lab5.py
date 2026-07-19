@@ -1,5 +1,5 @@
 import unittest
-from lab5 import MinHeap
+from thaiShop.dsaLearn.labDsa.lab5.lab5 import MinHeap
 
 class MinHeapTestCase(unittest.TestCase):
 	"""These are the test cases for the MinHeap class"""
