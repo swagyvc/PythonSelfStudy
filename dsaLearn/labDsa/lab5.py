@@ -54,4 +54,4 @@ class MinHeap:
 				self.data[i], self.data[smallest] = self.data[smallest], self.data[i]
 				i = smallest
 			else:
-				breaks
+				break
